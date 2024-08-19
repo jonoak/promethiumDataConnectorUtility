@@ -1,0 +1,23 @@
+trino:
+  host: your-trino-host
+  port: 8080
+  user: your-username
+  catalog: your-catalog
+  schema: your-schema
+
+sources:
+  - name: source1
+    type: mysql
+    host: mysql-host
+    port: 3306
+    user: mysql-user
+    password: mysql-password
+    database: mysql-database
+
+  - name: source2
+    type: postgres
+    host: postgres-host
+    port: 5432
+    user: postgres-user
+    password: postgres-password
+    database: postgres-database

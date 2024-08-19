@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: promethium-data-connector
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: promethium-data-connector
+  template:
+    metadata:
+      labels:
+        app: promethium-data-connector
+    spec:
+      containers:
+      - name: promethium-data-connector
+        image: your-docker-image:latest
+        ports:
+        - containerPort: 8080
+          name: http
+        env:
+        - name: TRINO_HOST
+          value: your-trino-host
+        - name: TRINO_PORT
+          value: "8080"
+        - name: TRINO_USER
+          value: your-username
+        - name: TRINO_CATALOG
+          value: your-catalog
+        - name: TRINO_SCHEMA
+          value: your-schema
